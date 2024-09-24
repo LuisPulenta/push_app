@@ -57,6 +57,7 @@ class HandleNotificationInteraccions extends StatefulWidget {
 
 class _HandleNotificationInteraccionsState
     extends State<HandleNotificationInteraccions> {
+  //---------------------------------------------------------------------------
   // It is assumed that all messages contain a data field with the key 'type'
   Future<void> setupInteractedMessage() async {
     // Get any messages which caused the application to open from
@@ -75,6 +76,7 @@ class _HandleNotificationInteraccionsState
     FirebaseMessaging.onMessageOpenedApp.listen(_handleMessage);
   }
 
+//---------------------------------------------------------------------------
   void _handleMessage(RemoteMessage message) {
     context.read<NotificationsBloc>().handleRemoteMessage(message);
 
@@ -91,6 +93,7 @@ class _HandleNotificationInteraccionsState
     // }
   }
 
+//---------------------------------------------------------------------------
   @override
   void initState() {
     super.initState();
