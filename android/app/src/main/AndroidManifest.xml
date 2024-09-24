@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.luisnu.push_app">
+    package="com.luisnu.notificacions2024">
    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
    <application
         android:label="push_app"

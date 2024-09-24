@@ -47,7 +47,11 @@ class _DetailsView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       child: Column(
         children: [
-          if (message.imageUrl != null) Image.network(message.imageUrl!),
+          if (message.imageUrl != null)
+            Image.network(
+              message.imageUrl!,
+              height: 300,
+            ),
           const SizedBox(
             height: 30,
           ),

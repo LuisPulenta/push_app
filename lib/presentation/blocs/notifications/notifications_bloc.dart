@@ -20,9 +20,11 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   FirebaseMessaging messaging = FirebaseMessaging.instance;
+
   int pushNumberId = 0;
 
   final Future<void> Function()? requestLocalNotificationPermissions;
+
   final void Function(
       {required int id,
       String? title,
@@ -44,24 +46,28 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     _onForegroundMessage();
   }
 
+//----------------------------------------------------------------------------
   static Future<void> initializeFCM() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
   }
 
+//----------------------------------------------------------------------------
   void _initialStatusCheck() async {
     final settings = await messaging.getNotificationSettings();
     add(NotificationStatusChanged(settings.authorizationStatus));
     _getFCMToken();
   }
 
+//----------------------------------------------------------------------------
   void _getFCMToken() async {
     if (state.status != AuthorizationStatus.authorized) return;
     final token = await messaging.getToken();
     print('Token: $token');
   }
 
+//----------------------------------------------------------------------------
   void handleRemoteMessage(RemoteMessage message) {
     if (message.notification == null) return;
     final notification = PushMessage(
@@ -87,17 +93,21 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     add(NotificationReceiver(notification));
   }
 
+//----------------------------------------------------------------------------
   void _onForegroundMessage() {
     FirebaseMessaging.onMessage.listen(handleRemoteMessage);
   }
 
+//----------------------------------------------------------------------------
   void _notificationStatusChanged(
       NotificationStatusChanged event, Emitter<NotificationsState> emit) {
     emit(state.copyWith(
       status: event.status,
     ));
+    _getFCMToken();
   }
 
+//----------------------------------------------------------------------------
   void _onPushMessageReceived(
       NotificationReceiver event, Emitter<NotificationsState> emit) {
     emit(state.copyWith(
@@ -105,6 +115,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     ));
   }
 
+//----------------------------------------------------------------------------
   void requestPermission() async {
     NotificationSettings settings = await messaging.requestPermission(
       alert: true,
@@ -126,6 +137,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     _getFCMToken();
   }
 
+//----------------------------------------------------------------------------
   PushMessage? getMessageById(String pushMessageId) {
     final exist = state.notifications
         .any((element) => element.messageId == pushMessageId);

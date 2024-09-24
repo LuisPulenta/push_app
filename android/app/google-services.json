@@ -1,74 +1,26 @@
 {
   "project_info": {
-    "project_number": "124311224291",
-    "firebase_url": "https://flutter-varios-89b3a-default-rtdb.firebaseio.com",
-    "project_id": "flutter-varios-89b3a",
-    "storage_bucket": "flutter-varios-89b3a.appspot.com"
+    "project_number": "1062044036126",
+    "project_id": "projects-e6264",
+    "storage_bucket": "projects-e6264.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:124311224291:android:2f651e52b60e2b781aaad6",
+        "mobilesdk_app_id": "1:1062044036126:android:a04fb5d27e8ad7c866d20f",
         "android_client_info": {
-          "package_name": "com.luisnu.notifications6"
+          "package_name": "com.luisnu.notificacions2024"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "124311224291-psush7hpl07oe3d6ne4jqk9rrahkh6ij.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.luisnu.notifications6",
-            "certificate_hash": "bfce6c53ed82ff13572091e9dda6368730f841ca"
-          }
-        },
-        {
-          "client_id": "124311224291-bru7f8ar41heb3mkosamoumgsnertt73.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAJTxNL1IbSY7-cz4Bf5KeKTIqHYA2TSbM"
+          "current_key": "AIzaSyBgFmgAhezOmZdcTTdU6OlLGuP71d1nSe0"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "124311224291-bru7f8ar41heb3mkosamoumgsnertt73.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:124311224291:android:17c4a2c591b9f7201aaad6",
-        "android_client_info": {
-          "package_name": "com.luisnu.push_app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "124311224291-bru7f8ar41heb3mkosamoumgsnertt73.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAJTxNL1IbSY7-cz4Bf5KeKTIqHYA2TSbM"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "124311224291-bru7f8ar41heb3mkosamoumgsnertt73.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

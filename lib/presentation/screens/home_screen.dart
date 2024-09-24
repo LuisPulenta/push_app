@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         title: context.select(
           (NotificationsBloc bloc) => Text(
             '${bloc.state.status}',
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
         ),
         centerTitle: true,
@@ -47,8 +47,8 @@ class _HomeView extends StatelessWidget {
         final notification = notifications[index];
         return ListTile(
             title: Text(notification.title,
-                style:
-                    TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+                style: const TextStyle(
+                    color: Colors.blue, fontWeight: FontWeight.bold)),
             subtitle: Text(notification.body),
             leading: notification.imageUrl != null
                 ? Image.network(notification.imageUrl!)

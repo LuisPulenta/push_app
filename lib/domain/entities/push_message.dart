@@ -17,15 +17,14 @@ class PushMessage {
   @override
   String toString() {
     return '''
-  Pushmessage 
-  id:       $messageId
-  title:    $title
-  body:     $body
-  sentDate: $sentDate
-  data:     $data
-  imageUrl: $imageUrl
+              Pushmessage 
+              id:       $messageId
+              title:    $title
+              body:     $body
+              sentDate: $sentDate
+              data:     $data
+              imageUrl: $imageUrl
 
-''';
-    return super.toString();
+            ''';
   }
 }
